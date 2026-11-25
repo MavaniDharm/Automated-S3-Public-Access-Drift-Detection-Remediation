@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3BlockPublicAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPublicAccessBlock",
+        "s3:GetBucketPublicAccessBlock"
+      ],
+      "Resource": "arn:aws:s3:::*"
+    },
+    {
+      "Sid": "PublishAlert",
+      "Effect": "Allow",
+      "Action": "sns:Publish",
+      "Resource": "<your DevSecOpsIncidentAlerts topic ARN>"
+    }
+  ]
+}
